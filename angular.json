@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "angular-viewer-js": {
+      "root": "projects/angular-viewer-js",
+      "sourceRoot": "projects/angular-viewer-js/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-viewer-js/tsconfig.lib.json",
+            "project": "projects/angular-viewer-js/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-viewer-js/src/test.ts",
+            "tsConfig": "projects/angular-viewer-js/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-viewer-js/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-viewer-js/tsconfig.lib.json",
+              "projects/angular-viewer-js/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-viewer-directive"

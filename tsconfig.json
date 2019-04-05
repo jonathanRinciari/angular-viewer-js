@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-viewer-js": [
+        "dist/angular-viewer-js"
+      ],
+      "angular-viewer-js/*": [
+        "dist/angular-viewer-js/*"
+      ]
+    }
   }
 }
